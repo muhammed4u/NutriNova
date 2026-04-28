@@ -1,0 +1,77 @@
+.loading {
+  display: none;
+}
+
+/* Make text appear first and icon after it */
+.notyf__toast {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.notyf__message {
+  order: 1;
+  margin-right: 8px;
+}
+
+.notyf__icon {
+  order: 2;
+}
+
+/* Global Font & Overrides */
+:root {
+  --font-sans: 'Outfit', sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar for Dark Theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5); 
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.5); 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.8); 
+}
+
+/* Glassmorphism card hovers */
+.recipe-card, .category-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.recipe-card:hover, .category-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 20px 40px -10px rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.5);
+}
+
+/* Glow effects */
+.glass-glow {
+  position: relative;
+}
+.glass-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, rgba(139,92,246,0.5), rgba(192,38,211,0.5));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.glass-glow:hover::before {
+  opacity: 1;
+}
