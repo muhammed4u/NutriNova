@@ -68,13 +68,8 @@ export function showCurrentSection(section) {
 //General
 
 window.addEventListener('DOMContentLoaded', () => {
-    if (sectionsNavigation.lastSection) {
-        sectionsNavigation.setActiveSection(sectionsNavigation.lastSection);
-    }
-    else {
-        // Default to home page
-        sectionsNavigation.setActiveSection('home');
-    }
+    // Always default to home page on load
+    sectionsNavigation.setActiveSection('home');
 });
 
 
